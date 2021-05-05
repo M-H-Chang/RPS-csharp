@@ -9,16 +9,21 @@ public class Program
     Console.WriteLine("Welcome to the game Rock, Paper, Scissors.");
     Console.Write("Player one please choose Rock, Paper, or Scissors: ");
     string playerOne = Console.ReadLine();
+
     Console.Write("Player two please choose Rock, Paper, or Scissors: ");
     string playerTwo = Console.ReadLine();
 
-    if (RPS.PlayerOneWin(playerOne, playerTwo) == true)
+    if (playerOne != "rock" || playerOne != "paper" || playerOne != "scissors" || playerTwo != "rock" || playerTwo != "paper" || playerTwo != "scissors")
+    {
+      Console.WriteLine("Please input rock, paper, or scissors.");
+    }
+    else if (RPS.PlayerOneWin(playerOne, playerTwo) == true)
     {
       Console.WriteLine("Player one wins!");
     }
     else if (RPS.PlayerTwoWin(playerTwo, playerOne) == true)
     {
-      Console.WriteLine("Player two wins@!");
+      Console.WriteLine("Player two wins!");
     }
     else
     {
@@ -26,3 +31,4 @@ public class Program
     }
   }
 }
+
